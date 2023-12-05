@@ -1,4 +1,4 @@
-
+from utils import *
 
 Ksequence = (
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5, 
@@ -12,21 +12,6 @@ Ksequence = (
 )
 
 
-def messageToByte(message: str) -> bytes:
-    return "0x"+ message.encode('utf-8').hex()
-
-# def bitwise_add_one(a):
-#     b = 0b1
-#     while b != 0:
-#         carry = a&b # Carry value is calculated 
-#         a = a^b # Sum value is calculated and stored in a
-#         b = carry<<1 # The carry value is shifted towards left by a bit
-
-#     return a # returns the final sum
-
-def bin_representation(message: str) -> str:
-    binary_rep = "0b" + (bin(int(messageToByte(message=message), base=16) )[2:]  ).zfill(8*(len(message)))
-    return binary_rep
 
 def padding(message:str) -> str:
     binary_rep = bin_representation(message=message)
