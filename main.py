@@ -22,3 +22,5 @@ if __name__ == "__main__":
 
     blockchain.transfer_token(pksc_a, pksc_b, 12, b"user1", signature_a)
     blockchain.transfer_token(pksc_b, pksc_a, 4, b"user2", signature_b)
+
+    print(blockchain.get_tokens_per_user())

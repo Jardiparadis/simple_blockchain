@@ -57,6 +57,9 @@ class Blockchain:
                 sender, receiver, nb_tokens = transaction.split(':')
                 if receiver not in nb_tokens_per_user:
                     nb_tokens_per_user[receiver] = 0
+                if sender not in nb_tokens_per_user:
+                    nb_tokens_per_user[sender] = 0
                 nb_tokens_per_user[receiver] += int(nb_tokens)
+                nb_tokens_per_user[sender] -= int(nb_tokens)
 
         return nb_tokens_per_user
