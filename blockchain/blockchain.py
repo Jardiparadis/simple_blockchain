@@ -1,6 +1,7 @@
 from blockchain.block import Block
 import rsa
 
+
 class Blockchain:
     def __init__(self):
         self.chain = []
@@ -31,7 +32,7 @@ class Blockchain:
         return user_tokens
 
     def create_token(self, public_key, nb_tokens):
-        # send # does not exist, these token appeared magically
+        # sender "#" does not exist, these tokens appeared magically
         self.add_transaction([f"#:{public_key.decode()}:{nb_tokens}"])
 
     def transfer_token(self, sender_key, receiver_key, nb_tokens, message, signature):
