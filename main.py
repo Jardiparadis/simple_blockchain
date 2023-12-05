@@ -1,10 +1,9 @@
-from blockchain.block import Block
+from blockchain.blockchain import Blockchain
 
 if __name__ == "__main__":
-    b1 = Block("", "Alice gave 5€ to Bob")
-    
-    b2 = Block(b1.get_hash(), "Bob paid a pizza 18 € to Michel")
+    blockchain = Blockchain()
+    hash1 = blockchain.add_transaction(["transaction 1", "transaction 2"])
+    hash2 = blockchain.add_transaction(["transaction 3"])
 
-    print(b1.get_hash())
-    print(b2.get_hash())
+    print(blockchain.get_transaction(hash1))
     pass
