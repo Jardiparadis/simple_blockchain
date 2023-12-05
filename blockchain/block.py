@@ -1,6 +1,7 @@
 import datetime
 import hashlib
 
+
 class Block:
     def __init__(self, prev_hash, transaction) -> None:
         self._prev_hash = prev_hash
